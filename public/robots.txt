@@ -1,0 +1,6 @@
+cat > public/robots.txt <<'EOF'
+User-agent: *
+Allow: /
+
+Sitemap: https://falcatiolibrorum.es/sitemap.xml
+EOF
