@@ -14,7 +14,7 @@ export default function Header() {
           <img
             src="/logo-falcatio.png"
             alt="Falcatio Librorum"
-            className="w-11 h-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+            className="w-13 h-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
           />
 
           <div className="leading-none">
