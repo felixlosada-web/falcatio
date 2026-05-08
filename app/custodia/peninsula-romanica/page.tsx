@@ -100,11 +100,11 @@ export default function PeninsulaRomanicaPage() {
             Scrinium XLI
           </p>
 
-          <h1 className="text-[42px] md:text-[58px] leading-[1.08] font-light tracking-[-0.03em] text-black mb-10">
+          <h1 className="text-4xl md:text-5xl leading-tight font-serif italic text-black mb-8">
             La Península Románica
           </h1>
 
-          <p className="text-[10px] tracking-[0.22em] uppercase text-black/40 mb-14">
+          <p className="text-[11px] tracking-[0.16em] uppercase text-black/40 mb-12">
             Piedra, Territorio y Memoria
           </p>
 
