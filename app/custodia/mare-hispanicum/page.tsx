@@ -1,15 +1,87 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const pageUrl = "https://falcatiolibrorum.es/custodia/mare-hispanicum";
+
 export const metadata: Metadata = {
-  title: "Scrinium XIV — Mare Hispanicum | Falcatio Librorum",
+  title: "Scrinium XIV — Mare Hispanicum | Hegemonía Naval Española",
   description:
-    "Scrinium dedicado a la hegemonía naval de la Corona Española: ciencia, navegación, cartografía, Armada, soberanía oceánica y memoria histórica.",
+    "Scrinium dedicado a la hegemonía naval de la Corona Española: navegación, cartografía, Armada, ciencia ilustrada, soberanía oceánica y memoria marítima.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Scrinium XIV — Mare Hispanicum",
+    description:
+      "Una arquitectura bibliográfica sobre la inteligencia naval de la Monarquía Hispánica: ciencia, navegación, cartografía, Armada y soberanía oceánica.",
+    url: pageUrl,
+    siteName: "Falcatio Librorum",
+    locale: "es_ES",
+    type: "article",
+    images: [
+      {
+        url: "https://falcatiolibrorum.es/logo-share.png",
+        width: 1200,
+        height: 630,
+        alt: "Falcatio Librorum",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scrinium XIV — Mare Hispanicum",
+    description:
+      "Scrinium dedicado a la hegemonía naval de la Corona Española y a la inteligencia marítima de la Monarquía Hispánica.",
+    images: ["https://falcatiolibrorum.es/logo-share.png"],
+  },
 };
 
 export default function MareHispanicumPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: "Scrinium XIV — Mare Hispanicum",
+    alternateName: "Hegemonía Naval de la Corona Española",
+    description:
+      "Scrinium dedicado a la hegemonía naval de la Corona Española: navegación, cartografía, Armada, ciencia ilustrada, soberanía oceánica y memoria marítima.",
+    url: pageUrl,
+    inLanguage: "es",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+    about: [
+      "Monarquía Hispánica",
+      "hegemonía naval",
+      "historia marítima española",
+      "Armada española",
+      "cartografía histórica",
+      "navegación oceánica",
+      "Malaspina",
+      "Fernández Duro",
+      "Mare Hispanicum",
+    ],
+    genre: [
+      "curaduría bibliográfica",
+      "historia naval",
+      "biblioteca privada",
+      "arquitectura bibliográfica",
+    ],
+    publisher: {
+      "@type": "Organization",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+  };
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-28 md:py-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Link
         href="/custodia"
         className="inline-block mb-16 text-[10px] tracking-[0.22em] uppercase text-black/40 hover:text-black transition-colors"
@@ -138,6 +210,18 @@ export default function MareHispanicumPage() {
             </li>
           </ul>
         </article>
+
+        <nav className="border-t border-black/10 pt-10 flex flex-col gap-3 text-[10px] tracking-[0.18em] uppercase">
+          <Link href="/custodia/el-gobierno-de-si" className="text-black/40 hover:text-black">
+            Scrinium IX — El Gobierno de Sí
+          </Link>
+          <Link href="/custodia/pensamiento-estrategico" className="text-black/40 hover:text-black">
+            Scrinium XXVII — El Pensamiento Estratégico
+          </Link>
+          <Link href="/custodia/peninsula-romanica" className="text-black/40 hover:text-black">
+            Scrinium XLI — La Península Románica
+          </Link>
+        </nav>
       </section>
     </main>
   );
