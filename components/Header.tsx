@@ -9,7 +9,7 @@ export default function Header() {
         
         <Link
           href="/"
-          className="flex items-center gap-2 group shrink-0"
+          className="flex items-center gap-1 group shrink-0"
         >
           <img
             src="/logo-falcatio.png"
