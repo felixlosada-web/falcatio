@@ -1,71 +1,44 @@
-"use client";
-
-import Link from "next/link";
-
-export default function Header() {
+export default function HomePage() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#F8F6F2]/95 border-b border-black/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-10 flex items-center justify-between gap-12">
-        
-        <Link
-          href="/"
-          className="flex flex-col items-center gap-4 group shrink-0 w-[320px]"
-        >
-          <img
-            src="/logo-falcatio.png"
-            alt="Falcatio"
-            className="w-14 h-auto opacity-90 transition-opacity group-hover:opacity-100"
-          />
+    <main className="min-h-screen bg-[#F8F6F2] pt-64 pb-32 px-6 md:px-12 lg:px-24">
+      <div className="max-w-[750px] mx-auto text-center">
+        <p className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-16 font-light">
+          Falcatio Librorum
+        </p>
 
-          <div className="flex flex-col items-center text-center">
-            <span className="text-[15px] tracking-[0.18em] text-black uppercase font-medium leading-none">
-              Falcatio Librorum
-            </span>
+        <h1 className="text-4xl md:text-5xl text-black mb-16 font-serif italic leading-tight">
+          Proponemos pensar, disfrutar y ser analógicamente.
+        </h1>
 
-            <span className="text-[9px] tracking-[0.12em] text-black/40 uppercase mt-2">
-              Curaduría Bibliográfica Privada
-            </span>
-          </div>
-        </Link>
+        <div className="max-w-[640px] mx-auto space-y-8 text-black/85 font-light leading-[1.9] text-lg text-left">
+          <p>
+            Falcatio Librorum es una casa de curaduría bibliográfica privada
+            concebida para quienes reconocen en los libros no solo una fuente de
+            conocimiento, sino una forma de arraigo, de conversación y de mundo.
+          </p>
 
-        <nav className="flex flex-wrap justify-end gap-x-5 gap-y-3 text-[10px] tracking-[0.16em] uppercase">
-          <Link
+          <p>
+            No reúne volúmenes: compone arquitecturas de sentido. Cada proyecto
+            nace de una escucha atenta, se ordena con criterio y culmina en una
+            forma destinada a ser habitada, interpretada y transmitida.
+          </p>
+
+          <p>
+            En una época atravesada por la aceleración, la saturación y la
+            lectura sin permanencia, Falcatio propone otra temporalidad: la de
+            la selección, la conversación y el legado.
+          </p>
+        </div>
+
+        <div className="mt-32 text-center">
+          <a
             href="/filosofia"
-            className="transition-colors text-black/40 hover:text-black"
+            className="text-[11px] tracking-[0.3em] uppercase text-black border-b border-black/20 pb-2 hover:border-black transition-all"
           >
-            Filosofía
-          </Link>
-
-          <Link
-            href="/scrinium"
-            className="transition-colors text-black/40 hover:text-black"
-          >
-            Obra mínima
-          </Link>
-
-          <Link
-            href="/custodia"
-            className="transition-colors text-black/40 hover:text-black"
-          >
-            Custodia
-          </Link>
-
-          <Link
-            href="/conversacion"
-            className="transition-colors text-black/40 hover:text-black"
-          >
-            La conversación
-          </Link>
-
-          <Link
-            href="/acceso"
-            className="transition-colors text-black/40 hover:text-black"
-          >
-            El Acceso
-          </Link>
-        </nav>
-
+            Adentrarse en la filosofía
+          </a>
+        </div>
       </div>
-    </header>
+    </main>
   );
 }
