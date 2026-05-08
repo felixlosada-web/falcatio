@@ -1,16 +1,16 @@
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#F8F6F2] pt-64 pb-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-[750px] mx-auto text-center">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-black/40 mb-16 font-light">
+    <main className="min-h-screen bg-[#F8F6F2] pt-44 pb-28 px-6 md:px-10">
+      <section className="max-w-[720px] mx-auto">
+        <p className="text-[10px] tracking-[0.22em] uppercase text-black/35 mb-14 font-light text-center">
           Falcatio Librorum
         </p>
 
-        <h1 className="text-4xl md:text-5xl text-black mb-16 font-serif italic leading-tight">
+        <h1 className="text-4xl md:text-5xl text-black mb-14 font-serif italic leading-tight text-center">
           Proponemos pensar, disfrutar y ser analógicamente.
         </h1>
 
-        <div className="max-w-[640px] mx-auto space-y-8 text-black/85 font-light leading-[1.9] text-lg text-left">
+        <div className="max-w-[620px] mx-auto space-y-7 text-black/80 font-light leading-[1.9] text-[17px]">
           <p>
             Falcatio Librorum es una casa de curaduría bibliográfica privada
             concebida para quienes reconocen en los libros no solo una fuente de
@@ -30,15 +30,15 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="mt-32 text-center">
+        <div className="mt-24 text-center">
           <a
             href="/filosofia"
-            className="text-[11px] tracking-[0.3em] uppercase text-black border-b border-black/20 pb-2 hover:border-black transition-all"
+            className="text-[10px] tracking-[0.22em] uppercase text-black/55 border-b border-black/20 pb-2 hover:text-black hover:border-black transition-all duration-300"
           >
             Adentrarse en la filosofía
           </a>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
