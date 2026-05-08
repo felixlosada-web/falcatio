@@ -106,11 +106,11 @@ export default function PensamientoEstrategicoPage() {
             Scrinium XXVII
           </p>
 
-          <h1 className="text-4xl md:text-5xl leading-tight font-serif italic text-black mb-8">
+          <h1 className="text-[42px] md:text-[58px] leading-[1.08] font-light tracking-[-0.03em] text-black mb-10">
             El Pensamiento Estratégico
           </h1>
 
-          <p className="text-[11px] tracking-[0.16em] uppercase text-black/40 mb-12">
+          <p className="text-[10px] tracking-[0.22em] uppercase text-black/40 mb-14">
             Del Príncipe a la Sala de Consejo
           </p>
 
