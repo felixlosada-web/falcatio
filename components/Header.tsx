@@ -9,12 +9,12 @@ export default function Header() {
         
         <Link
           href="/"
-          className="flex items-center gap-5 group shrink-0"
+          className="flex items-center gap-4 group shrink-0"
         >
           <img
             src="/logo-falcatio.png"
             alt="Falcatio Librorum"
-            className="w-9 h-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+            className="w-11 h-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
           />
 
           <div className="leading-none">
