@@ -1,15 +1,98 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const pageUrl =
+  "https://falcatiolibrorum.es/custodia/pensamiento-estrategico";
+
 export const metadata: Metadata = {
-  title: "Scrinium XXVII — El Pensamiento Estratégico | Falcatio Librorum",
+  title: "Scrinium XXVII — El Pensamiento Estratégico | Poder y Decisión",
   description:
-    "Scrinium dedicado a la inteligencia del mando: razón estratégica, poder, prudencia, guerra, empresa y decisión bajo incertidumbre.",
+    "Scrinium dedicado a la inteligencia del mando: pensamiento estratégico, razón de Estado, poder, prudencia, guerra, empresa y decisión bajo incertidumbre.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Scrinium XXVII — El Pensamiento Estratégico",
+    description:
+      "Una arquitectura bibliográfica sobre poder, mando, estrategia, prudencia política, guerra, empresa y decisión bajo incertidumbre.",
+    url: pageUrl,
+    siteName: "Falcatio Librorum",
+    locale: "es_ES",
+    type: "article",
+    images: [
+      {
+        url: "https://falcatiolibrorum.es/logo-share.png",
+        width: 1200,
+        height: 630,
+        alt: "Falcatio Librorum",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scrinium XXVII — El Pensamiento Estratégico",
+    description:
+      "Scrinium dedicado a la inteligencia del mando, la razón estratégica y la decisión bajo incertidumbre.",
+    images: ["https://falcatiolibrorum.es/logo-share.png"],
+  },
 };
 
 export default function PensamientoEstrategicoPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: "Scrinium XXVII — El Pensamiento Estratégico",
+    alternateName: "Del Príncipe a la Sala de Consejo",
+    description:
+      "Scrinium dedicado a la inteligencia del mando: pensamiento estratégico, razón de Estado, poder, prudencia, guerra, empresa y decisión bajo incertidumbre.",
+    url: pageUrl,
+    inLanguage: "es",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+    about: [
+      "pensamiento estratégico",
+      "razón de Estado",
+      "poder",
+      "mando",
+      "prudencia política",
+      "estrategia empresarial",
+      "teoría militar",
+      "decisión bajo incertidumbre",
+      "Maquiavelo",
+      "Sun Tzu",
+      "Clausewitz",
+      "Gracián",
+      "Saavedra Fajardo",
+      "Schopenhauer",
+      "Toffler",
+      "Naím",
+      "Ferguson",
+    ],
+    genre: [
+      "curaduría bibliográfica",
+      "pensamiento estratégico",
+      "filosofía política",
+      "biblioteca privada",
+      "arquitectura bibliográfica",
+      "historia del poder",
+    ],
+    publisher: {
+      "@type": "Organization",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+  };
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-28 md:py-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Link
         href="/custodia"
         className="inline-block mb-16 text-[10px] tracking-[0.22em] uppercase text-black/40 hover:text-black transition-colors"
@@ -199,6 +282,18 @@ export default function PensamientoEstrategicoPage() {
             consecuencias del mundo que se pone en movimiento.
           </p>
         </article>
+
+        <nav className="border-t border-black/10 pt-10 flex flex-col gap-3 text-[10px] tracking-[0.18em] uppercase">
+          <Link href="/custodia/mare-hispanicum" className="text-black/40 hover:text-black">
+            Scrinium XIV — Mare Hispanicum
+          </Link>
+          <Link href="/custodia/el-gobierno-de-si" className="text-black/40 hover:text-black">
+            Scrinium IX — El Gobierno de Sí
+          </Link>
+          <Link href="/custodia/peninsula-romanica" className="text-black/40 hover:text-black">
+            Scrinium XLI — La Península Románica
+          </Link>
+        </nav>
       </section>
     </main>
   );
