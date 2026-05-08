@@ -4,64 +4,64 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#F8F6F2]/96 border-b border-black/5">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
-        
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#F8F6F2]/95 border-b border-black/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-10 flex items-center justify-between gap-12">
+
         <Link
           href="/"
-          className="flex items-center gap-0 group shrink-0"
+          className="flex flex-col items-center gap-0 group shrink-0 w-[320px]"
         >
           <img
             src="/logo-falcatio.png"
-            alt="Falcatio Librorum"
-            className="w-19 h-auto opacity-90 transition-opacity duration-300 group-hover:opacity-100"
+            alt="Falcatio"
+            className="w-19 h-auto opacity-90 transition-opacity group-hover:opacity-100"
           />
 
-          <div className="leading-none">
-            <div className="text-[13px] tracking-[0.14em] uppercase text-black font-medium">
+          <div className="flex flex-col items-center text-center">
+            <span className="text-[15px] tracking-[0.18em] text-black uppercase font-medium leading-none">
               Falcatio Librorum
-            </div>
+            </span>
 
-            <div className="text-[8px] tracking-[0.12em] uppercase text-black/35 mt-2">
-              Curaduría bibliográfica privada
-            </div>
+            <span className="text-[9px] tracking-[0.12em] text-black/40 uppercase mt-2">
+              Curaduría Bibliográfica Privada
+            </span>
           </div>
         </Link>
 
-        <nav className="flex items-center gap-6 text-[10px] tracking-[0.12em] uppercase text-black/45">
+        <nav className="flex flex-wrap justify-end gap-x-7 gap-y-3 text-[10px] tracking-[0.18em] uppercase">
           <Link
             href="/filosofia"
-            className="hover:text-black transition-colors duration-300"
+            className="transition-colors text-black/40 hover:text-black"
           >
             Filosofía
           </Link>
 
           <Link
             href="/scrinium"
-            className="hover:text-black transition-colors duration-300"
+            className="transition-colors text-black/40 hover:text-black"
           >
             Obra mínima
           </Link>
 
           <Link
             href="/custodia"
-            className="hover:text-black transition-colors duration-300"
+            className="transition-colors text-black/40 hover:text-black"
           >
             Custodia
           </Link>
 
           <Link
             href="/conversacion"
-            className="hover:text-black transition-colors duration-300"
+            className="transition-colors text-black/40 hover:text-black"
           >
             La conversación
           </Link>
 
           <Link
             href="/acceso"
-            className="hover:text-black transition-colors duration-300"
+            className="transition-colors text-black/40 hover:text-black"
           >
-            El acceso
+            El Acceso
           </Link>
         </nav>
 
