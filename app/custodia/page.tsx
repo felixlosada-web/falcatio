@@ -1,39 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const pageUrl = "https://falcatiolibrorum.es/custodia";
-
 export const metadata: Metadata = {
-  title: "Custodia | Scrinia Bibliográficos | Falcatio Librorum",
+  title: "Custodia | Falcatio Librorum",
   description:
-    "Scrinia disponibles para custodia: arquitecturas bibliográficas singulares concebidas como obras únicas, cerradas y destinadas a un único custodio.",
-  alternates: {
-    canonical: pageUrl,
-  },
-  openGraph: {
-    title: "Custodia | Falcatio Librorum",
-    description:
-      "Scrinia bibliográficos concebidos como obras únicas: filosofía, estrategia, memoria territorial y tradición intelectual.",
-    url: pageUrl,
-    siteName: "Falcatio Librorum",
-    locale: "es_ES",
-    type: "website",
-    images: [
-      {
-        url: "https://falcatiolibrorum.es/logo-share.png",
-        width: 1200,
-        height: 630,
-        alt: "Falcatio Librorum",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Custodia | Falcatio Librorum",
-    description:
-      "Scrinia bibliográficos singulares concebidos como obras únicas y destinadas a un único custodio.",
-    images: ["https://falcatiolibrorum.es/logo-share.png"],
-  },
+    "Scrinia disponibles para custodia: tesis bibliográficas singulares concebidas como obras únicas, cerradas y destinadas a un único custodio.",
 };
 
 const scrinia = [
@@ -88,79 +59,43 @@ const scrinia = [
 ];
 
 export default function CustodiaPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Custodia",
-    description:
-      "Scrinia bibliográficos concebidos como arquitecturas intelectuales singulares y destinados a un único custodio.",
-    url: pageUrl,
-    inLanguage: "es",
-    isPartOf: {
-      "@type": "WebSite",
-      name: "Falcatio Librorum",
-      url: "https://falcatiolibrorum.es",
-    },
-    about: [
-      "bibliotecas privadas",
-      "curaduría bibliográfica",
-      "arquitectura bibliográfica",
-      "historia intelectual",
-      "pensamiento estratégico",
-      "filosofía clásica",
-      "historia marítima",
-      "románico peninsular",
-      "memoria territorial",
-      "libros raros",
-      "custodia patrimonial",
-    ],
-    publisher: {
-      "@type": "Organization",
-      name: "Falcatio Librorum",
-      url: "https://falcatiolibrorum.es",
-    },
-  };
-
   return (
-    <main className="max-w-5xl mx-auto px-6 py-28 md:py-36">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <section className="max-w-3xl mb-24">
-        <p className="text-[10px] tracking-[0.28em] uppercase text-black/40 mb-6">
+    <main className="min-h-screen bg-[#F8F6F2] pt-44 pb-32 px-6 md:px-10">
+      <section className="max-w-[760px] mx-auto mb-32">
+        <p className="text-[10px] tracking-[0.22em] uppercase text-black/35 mb-10">
           Custodia
         </p>
 
-        <h1 className="text-3xl md:text-5xl leading-tight font-light tracking-[-0.03em] mb-8">
+        <h1 className="text-4xl md:text-5xl leading-tight font-serif italic text-black mb-12">
           Scrinia en espera de custodio
         </h1>
 
-        <p className="text-base md:text-lg leading-relaxed text-black/70">
+        <p className="text-[17px] leading-[1.95] text-black/75 font-light">
           Inspirado por sus propias conversaciones, el curador de la casa
           materializa tesis bibliográficas singulares que se integran en nuestro
           registro y quedan a la espera de un único custodio que les dé lugar.
         </p>
       </section>
 
-      <section className="space-y-24">
-        {scrinia.map((item) => (
+      <section className="max-w-[760px] mx-auto">
+        {scrinia.map((item, index) => (
           <article
             key={item.title}
-            className="border-t border-black/10 pt-12 grid md:grid-cols-[1fr_2fr] gap-10"
+            className={`${
+              index !== 0 ? "border-t border-black/10 pt-20" : ""
+            } pb-24`}
           >
-            <div>
-              <h2 className="text-2xl leading-snug font-light tracking-[-0.02em]">
+            <div className="mb-10">
+              <h2 className="text-[30px] leading-[1.2] font-light tracking-[-0.02em] text-black mb-4">
                 {item.title}
               </h2>
 
-              <p className="mt-3 text-[11px] tracking-[0.18em] uppercase text-black/45">
+              <p className="text-[11px] tracking-[0.16em] uppercase text-black/40">
                 {item.subtitle}
               </p>
             </div>
 
-            <div className="space-y-6 text-[15px] leading-relaxed text-black/70">
+            <div className="space-y-7 text-[16px] leading-[1.95] text-black/72 font-light">
               <p>
                 <span className="text-black">La tesis:</span> {item.thesis}
               </p>
@@ -174,10 +109,12 @@ export default function CustodiaPage() {
                 <span className="text-black">El continente:</span>{" "}
                 {item.container}
               </p>
+            </div>
 
+            <div className="mt-10">
               <Link
                 href={item.href}
-                className="inline-block mt-4 text-[11px] tracking-[0.18em] uppercase text-black border-b border-black/30 pb-1 hover:border-black transition-colors"
+                className="text-[10px] tracking-[0.22em] uppercase text-black/55 border-b border-black/20 pb-2 hover:text-black hover:border-black transition-all duration-300"
               >
                 {item.linkText}
               </Link>
@@ -186,8 +123,8 @@ export default function CustodiaPage() {
         ))}
       </section>
 
-      <section className="border-t border-black/10 mt-28 pt-12 max-w-3xl">
-        <p className="text-base md:text-lg leading-relaxed text-black/70">
+      <section className="max-w-[760px] mx-auto border-t border-black/10 pt-16 mt-10">
+        <p className="text-[17px] leading-[1.95] text-black/75 font-light">
           Cada Scrinium es una obra única y cerrada. Si reconoce en alguna de
           estas tesis un territorio que le pertenece, puede solicitar los
           detalles de su arquitectura y estado de custodia en una audiencia
