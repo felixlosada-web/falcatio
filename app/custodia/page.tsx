@@ -127,7 +127,7 @@ export default function CustodiaPage() {
         <p className="text-[17px] leading-[1.95] text-black/75 font-light">
           Cada Scrinium es una obra única y cerrada. Si reconoce en alguna de
           estas tesis un territorio que le pertenece, puede solicitar los
-          detalles de su arquitectura y estado de custodia en una audiencia
+          detalles de su arquitectura y estado de custodia en una conversación
           privada.
         </p>
       </section>
