@@ -1,15 +1,92 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const pageUrl = "https://falcatiolibrorum.es/custodia/peninsula-romanica";
+
 export const metadata: Metadata = {
-  title: "Scrinium XLI — La Península Románica | Falcatio Librorum",
+  title: "Scrinium XLI — La Península Románica | Románico Peninsular",
   description:
-    "Scrinium dedicado al románico peninsular como archivo territorial: piedra, monasterio, aldea, camino, diócesis, frontera y memoria.",
+    "Scrinium dedicado al románico peninsular como archivo territorial: piedra, monasterios, aldeas, caminos, diócesis, frontera, paisaje y memoria medieval.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Scrinium XLI — La Península Románica",
+    description:
+      "Una arquitectura bibliográfica sobre el románico peninsular como memoria territorial: piedra, monasterio, aldea, camino, diócesis y paisaje.",
+    url: pageUrl,
+    siteName: "Falcatio Librorum",
+    locale: "es_ES",
+    type: "article",
+    images: [
+      {
+        url: "https://falcatiolibrorum.es/logo-share.png",
+        width: 1200,
+        height: 630,
+        alt: "Falcatio Librorum",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scrinium XLI — La Península Románica",
+    description:
+      "Scrinium dedicado al románico peninsular como archivo territorial, artístico, histórico y patrimonial.",
+    images: ["https://falcatiolibrorum.es/logo-share.png"],
+  },
 };
 
 export default function PeninsulaRomanicaPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: "Scrinium XLI — La Península Románica",
+    alternateName: "Piedra, Territorio y Memoria",
+    description:
+      "Scrinium dedicado al románico peninsular como archivo territorial: piedra, monasterios, aldeas, caminos, diócesis, frontera, paisaje y memoria medieval.",
+    url: pageUrl,
+    inLanguage: "es",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+    about: [
+      "románico peninsular",
+      "arte románico",
+      "arquitectura medieval",
+      "patrimonio medieval",
+      "memoria territorial",
+      "Castilla y León",
+      "prerrománico asturiano",
+      "monasterios medievales",
+      "iglesias románicas",
+      "paisaje medieval",
+      "Fundación Santa María la Real",
+      "Enciclopedia del Románico",
+    ],
+    genre: [
+      "curaduría bibliográfica",
+      "historia del arte",
+      "patrimonio cultural",
+      "biblioteca privada",
+      "arquitectura bibliográfica",
+      "memoria medieval",
+    ],
+    publisher: {
+      "@type": "Organization",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+  };
+
   return (
     <main className="max-w-4xl mx-auto px-6 py-28 md:py-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Link
         href="/custodia"
         className="inline-block mb-16 text-[10px] tracking-[0.22em] uppercase text-black/40 hover:text-black transition-colors"
@@ -186,6 +263,18 @@ export default function PeninsulaRomanicaPage() {
             civilización dispersa en el paisaje.
           </p>
         </article>
+
+        <nav className="border-t border-black/10 pt-10 flex flex-col gap-3 text-[10px] tracking-[0.18em] uppercase">
+          <Link href="/custodia/mare-hispanicum" className="text-black/40 hover:text-black">
+            Scrinium XIV — Mare Hispanicum
+          </Link>
+          <Link href="/custodia/el-gobierno-de-si" className="text-black/40 hover:text-black">
+            Scrinium IX — El Gobierno de Sí
+          </Link>
+          <Link href="/custodia/pensamiento-estrategico" className="text-black/40 hover:text-black">
+            Scrinium XXVII — El Pensamiento Estratégico
+          </Link>
+        </nav>
       </section>
     </main>
   );
