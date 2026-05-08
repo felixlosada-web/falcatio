@@ -1,10 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const pageUrl = "https://falcatiolibrorum.es/custodia";
+
 export const metadata: Metadata = {
-  title: "Custodia | Falcatio Librorum",
+  title: "Custodia | Scrinia Bibliográficos | Falcatio Librorum",
   description:
-    "Scrinia disponibles para custodia: tesis bibliográficas singulares concebidas como obras únicas, cerradas y destinadas a un único custodio.",
+    "Scrinia disponibles para custodia: arquitecturas bibliográficas singulares concebidas como obras únicas, cerradas y destinadas a un único custodio.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Custodia | Falcatio Librorum",
+    description:
+      "Scrinia bibliográficos concebidos como obras únicas: filosofía, estrategia, memoria territorial y tradición intelectual.",
+    url: pageUrl,
+    siteName: "Falcatio Librorum",
+    locale: "es_ES",
+    type: "website",
+    images: [
+      {
+        url: "https://falcatiolibrorum.es/logo-share.png",
+        width: 1200,
+        height: 630,
+        alt: "Falcatio Librorum",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custodia | Falcatio Librorum",
+    description:
+      "Scrinia bibliográficos singulares concebidos como obras únicas y destinadas a un único custodio.",
+    images: ["https://falcatiolibrorum.es/logo-share.png"],
+  },
 };
 
 const scrinia = [
@@ -59,8 +88,46 @@ const scrinia = [
 ];
 
 export default function CustodiaPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Custodia",
+    description:
+      "Scrinia bibliográficos concebidos como arquitecturas intelectuales singulares y destinados a un único custodio.",
+    url: pageUrl,
+    inLanguage: "es",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+    about: [
+      "bibliotecas privadas",
+      "curaduría bibliográfica",
+      "arquitectura bibliográfica",
+      "historia intelectual",
+      "pensamiento estratégico",
+      "filosofía clásica",
+      "historia marítima",
+      "románico peninsular",
+      "memoria territorial",
+      "libros raros",
+      "custodia patrimonial",
+    ],
+    publisher: {
+      "@type": "Organization",
+      name: "Falcatio Librorum",
+      url: "https://falcatiolibrorum.es",
+    },
+  };
+
   return (
     <main className="max-w-5xl mx-auto px-6 py-28 md:py-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <section className="max-w-3xl mb-24">
         <p className="text-[10px] tracking-[0.28em] uppercase text-black/40 mb-6">
           Custodia
@@ -87,6 +154,7 @@ export default function CustodiaPage() {
               <h2 className="text-2xl leading-snug font-light tracking-[-0.02em]">
                 {item.title}
               </h2>
+
               <p className="mt-3 text-[11px] tracking-[0.18em] uppercase text-black/45">
                 {item.subtitle}
               </p>
