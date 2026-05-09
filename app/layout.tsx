@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
     title: "Falcatio Librorum",
     description:
       "Curaduría bibliográfica privada. Un espacio para el arraigo verdadero y la conversación analógica.",
-    url: "https://www.falcatiolibrorum.es",
+    url: "https://falcatiolibrorum.es",
     siteName: "Falcatio Librorum",
     images: [
       {
-        url: "https://www.falcatiolibrorum.es/logo-share.png",
+        url: "https://falcatiolibrorum.es/logo-share.png",
         width: 1200,
         height: 630,
         alt: "Falcatio Librorum",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
